@@ -1,0 +1,9 @@
+{
+  "name": "ramadan-tracker-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ramadan-tracker-web",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project ramadan-tracker-web --web",
+  "targets": {}
+}
