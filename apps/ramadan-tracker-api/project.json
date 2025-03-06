@@ -1,0 +1,40 @@
+{
+  "name": "ramadan-tracker-api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ramadan-tracker-api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ramadan-tracker-api",
+        "main": "apps/ramadan-tracker-api/src/main.ts",
+        "tsConfig": "apps/ramadan-tracker-api/tsconfig.app.json",
+        "assets": []
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ramadan-tracker-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ramadan-tracker-api:build:development"
+        },
+        "production": {
+          "buildTarget": "ramadan-tracker-api:build:production"
+        }
+      }
+    },
+    "test": {
+      "options": {
+        "passWithNoTests": true
+      }
+    }
+  }
+}
